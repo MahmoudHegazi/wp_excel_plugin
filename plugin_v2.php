@@ -125,26 +125,17 @@ echo get_models_for_make_year('2002','Subaru');
 //////////////////////////// finall result
 // function get tire_size for make and year and model
 
+
 function get_size_for_make_year_mdoel($year, $make, $model) {
-function get_size_by_makeyearmodel($year, $make, $model) {
 global $wpdb;
 $tablename=$wpdb->base_prefix . "cli_cars";
-$tire_size = $wpdb->get_results("SELECT id, tire_width FROM $tablename WHERE year = '$year' AND make='$make' AND model='$model'");
-return $tire_size;
-}
-
-$result = get_size_by_makeyearmodel($year, $make, $model);
-print_r($result);
-return $result;
-
-
+$x = $wpdb->get_results("SELECT id, tire_width FROM $tablename WHERE year = '$year' AND make='$make' AND model='$model'");
+return $x[0]->tire_width;
 }
 
 echo '<br /><br /> Size: <br /><br />';
-$x = get_size_for_make_year_mdoel('1989','Mazda','626a');
-if ($x === false){
-  echo 'unique value';
-}
+echo get_size_for_make_year_mdoel('1989','Mazda','626');
+
 
    // query part
    // get makes by year
@@ -376,9 +367,9 @@ function upgrade() {
     }
 }
 
-my_plugin_delete_database();
-upgrade_200($wpdb);
-my_plugin_insert_data($returned_sheet);
+//my_plugin_delete_database();
+//upgrade_200($wpdb);
+//my_plugin_insert_data($returned_sheet);
 
 
 
