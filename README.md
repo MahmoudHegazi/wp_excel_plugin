@@ -140,3 +140,7 @@ jQuery(document).ready(function($){
 
 });
 ```
+
+## source help me in this new function
+handle the call stack problem it something like hack
+https://stackoverflow.com/questions/6095530/maximum-call-stack-size-exceeded-error
