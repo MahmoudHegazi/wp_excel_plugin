@@ -11,17 +11,58 @@
 
 1. some says php exuciton not effect javascript and could not connected I find new way to make JavaScript knows when PHP will run without any ajax or requests
 
-```javascript 
-// unlike what should happend due to the php function not make document ready this will fired after the php function and for loop complete
+```javascript
+<script>
+
+// this is new invition like JSON  it seem cute function but it is not
+// it will excuted after the php run thats Magic (python king )
+
+function connect_php() {
 jQuery(document).ready(function($){
 
 
     setTimeout(function() {
-       // $("myclicker").css('display', 'block');
-       alert('hi');
-    }, 10000); //here 1000 means 1 second
+       $("#final_result").css('display', 'block');
+    }, 4000); //here 1000 means 1 second
 
 });
+
+}
+
+jQuery(document).ready(function($){
+  /*
+    $( "#aform" ).submit(
+
+      function($,event){
+        event.preventDefault();
+      //  connect_php();
+      //  $( "#aform" ).submit();
+
+      }
+    );
+    */
+    (function a(x) {
+        // The following condition
+        // is the base case.
+        if ( ! x) {
+            return;
+        }
+        a(--x);
+        event.preventDefault();
+        $( "#aform" ).submit();
+        connect_php();
+    })(10);
+    
+});
+
+
+// do not neeed this way
+
+</script>
+
+```
+
+
 
 ```php
 // this php connected to javascript Invinted By Python king no ajax no connect Just Adavnaced brain
@@ -83,4 +124,19 @@ $tablename=$wpdb->base_prefix . "cli_cars";
    $message_success = 'every thing completed I will apear after end';
    echo '<p style="background:lightblue;font-size:1.2em;padding:30px;width:300px;">'. $message_success .'</p>';
 }
+```
+
+
+
+```javascript 
+// unlike what should happend due to the php function not make document ready this will fired after the php function and for loop complete
+jQuery(document).ready(function($){
+
+
+    setTimeout(function() {
+       // $("myclicker").css('display', 'block');
+       alert('hi');
+    }, 10000); //here 1000 means 1 second
+
+});
 ```
