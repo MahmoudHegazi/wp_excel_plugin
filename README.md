@@ -7,11 +7,11 @@
 3. it Use excelreader to make it more powerfull 
 
 
-### like JSON was invated
+### like JSON was invated I invited way to connect PHP excution and JS excution and return complete message
 
 1. some says php exuciton not effect javascript and could not connected I find new way to make JavaScript knows when PHP will run without any ajax or requests
 
-```
+```javascript 
 // unlike what should happend due to the php function not make document ready this will fired after the php function and for loop complete
 jQuery(document).ready(function($){
 
@@ -23,12 +23,11 @@ jQuery(document).ready(function($){
 
 });
 
-```
+```php
 // this php connected to javascript Invinted By Python king no ajax no connect Just Adavnaced brain
 
 function my_plugin_insert_data($excel_data_arrays) {
 
-// insert
 $counter = 0;
 
 global $wpdb;
